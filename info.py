@@ -9,11 +9,13 @@ def is_enabled(value, default):
     elif value.strip().lower() in ["off", "false", "no", "0", "disable", "n"]: return False
     else: return default
 
+from os import environ
 
-# PyroClient Setup 
-API_ID = int(environ['API_ID'21643763])
-API_HASH = environ['API_HASH'9ab0b0e819951db76417c7e4962ccdf5]
-BOT_TOKEN = environ['BOT_TOKEN'7262086950:AAFFjZkbFtdAnizcDgFUmJuY8uAQhfz8CPk]
+# PyroClient Setup
+API_ID = int(environ.get('API_ID', '21643763'))
+API_HASH = environ.get('API_HASH', '9ab0b0e819951db76417c7e4962ccdf5')
+BOT_TOKEN = environ.get('BOT_TOKEN', '7262086950:AAFFjZkbFtdAnizcDgFUmJuY8uAQhfz8CPk')
+
 
 # Bot settings
 WEB_SUPPORT = bool(environ.get("WEBHOOK", 'True')) # for web support on/off
